@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_22_203522) do
+ActiveRecord::Schema.define(version: 2021_07_22_205528) do
+
+  create_table "expenses", force: :cascade do |t|
+    t.string "name"
+    t.integer "amount"
+    t.integer "user_id_id"
+    t.integer "group_id_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id_id"], name: "index_expenses_on_group_id_id"
+    t.index ["user_id_id"], name: "index_expenses_on_user_id_id"
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
@@ -32,4 +43,6 @@ ActiveRecord::Schema.define(version: 2021_07_22_203522) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "expenses", "groups", column: "group_id_id"
+  add_foreign_key "expenses", "users", column: "user_id_id"
 end
