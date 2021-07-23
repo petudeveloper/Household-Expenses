@@ -9,29 +9,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-        <%# Bootstrap %>
+    <%# Bootstrap %>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
 
 <body>
-<% if current_uri != root_path %>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <%= link_to 'HouseHold Expenses', root_path, class: 'navbar-brand mb-0 h1' %>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <div class="navbar-nav">
-          <%= link_to 'All my expenses', expenses_path, class: 'nav-link' %>
-          <%= link_to 'All my external transactions', '', class: 'nav-link' %>
-          <%= link_to 'All groups', groups_path, class: 'nav-link' %>
-        </div>
-      </div>
-    </div>
-  </nav>
-<% end %>
-
     <%= yield %>
 
         <%# Bootstrap %>
