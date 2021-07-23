@@ -1,1 +1,11 @@
-<h1>User profile</h1>
+<div class="d-flex flex-column w-50 justify-content-center align-items-center">
+    <%= image_tag "profileIcon.png" %>
+    <%= @user.name %>
+</div>
+<div>
+    <ul>
+        <li><%= link_to 'All my expenses', expenses_path, class: '' %></li>
+        <li><%= link_to 'All my external transactions', '', class: '' %></li>
+        <li><%= link_to 'All groups', groups_path, class: '' %></li>
+    </ul>
+</div>
