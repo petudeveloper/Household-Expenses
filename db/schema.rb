@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 2021_07_22_205528) do
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "icon"
+    t.integer "user_id_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id_id"], name: "index_groups_on_user_id_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,4 +47,5 @@ ActiveRecord::Schema.define(version: 2021_07_22_205528) do
 
   add_foreign_key "expenses", "groups", column: "group_id_id"
   add_foreign_key "expenses", "users", column: "user_id_id"
+  add_foreign_key "groups", "users", column: "user_id_id"
 end
