@@ -1,7 +1,7 @@
 <div class="main-page-container d-flex flex-column align-items-center justify-content-center">
     <%= link_to 'Sign out', destroy_user_session_path, class: 'text-white text-decoration-none position-absolute top-0 end-0 p-2' , method: :delete %>
     <div class="d-flex flex-column align-items-center justify-content-center">
-        <div class="container-progile-image d-flex justify-content-center">
+        <div class="d-flex justify-content-center">
             <%= image_tag "profileIcon.png", class: 'w-25 rounded-circle' %>
         </div>
         <span class="text-white"><%= @user.name.upcase %></span>
