@@ -1,11 +1,16 @@
-<div class="d-flex flex-column w-50 justify-content-center align-items-center">
-    <%= image_tag "profileIcon.png" %>
-    <%= @user.name %>
-</div>
-<div>
-    <ul>
-        <li><%= link_to 'All my expenses', expenses_path, class: '' %></li>
-        <li><%= link_to 'All my external transactions', '', class: '' %></li>
-        <li><%= link_to 'All groups', groups_path, class: '' %></li>
-    </ul>
+<div class="main-page-container d-flex flex-column align-items-center justify-content-center">
+    <%= link_to 'Sign out', destroy_user_session_path, class: 'text-white text-decoration-none position-absolute top-0 end-0 p-2' , method: :delete %>
+    <div class="d-flex flex-column align-items-center justify-content-center">
+        <div class="container-progile-image d-flex justify-content-center">
+            <%= image_tag "profileIcon.png", class: 'w-25 rounded-circle' %>
+        </div>
+        <span class="text-white"><%= @user.name.upcase %></span>
+    </div>
+    <div class="pt-5">
+        <ul class=" ps-0">
+            <li class="py-3 border-bottom"><%= link_to 'All my expenses', expenses_path, class: 'text-decoration-none text-white ms-2' %></li>
+            <li class="py-3 border-bottom"><%= link_to 'All my external transactions', '', class: 'text-decoration-none text-white ms-2' %></li>
+            <li class="py-3 border-bottom"><%= link_to 'All groups', groups_path, class: 'text-decoration-none text-white ms-2' %>
+        </ul>
+    </div>
 </div>

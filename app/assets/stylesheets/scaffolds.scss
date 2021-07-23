@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 body {
   background-color: #fff;
   color: #333;
@@ -6,6 +8,7 @@ body {
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
+  list-style-type: none;
   line-height: 18px; }
 
 pre {
@@ -63,3 +66,12 @@ div.actions {
 
 label {
   display: block; }
+
+.login-page-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.lobster {
+  font-family: 'Lobster', cursive;
+}
