@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 2021_07_23_151714) do
   end
 
   create_table "group_expenses", force: :cascade do |t|
-    t.string "name"
-    t.integer "amount"
     t.integer "group_id"
     t.integer "expense_id"
     t.datetime "created_at", precision: 6, null: false
