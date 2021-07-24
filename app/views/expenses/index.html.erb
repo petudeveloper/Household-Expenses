@@ -1,49 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <%= link_to 'HouseHold Expenses', root_path, class: 'navbar-brand mb-0 h1' %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <div class="navbar-nav">
-        <li class="nav-item"><%= link_to 'All my expenses', expenses_path, class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'All my external transactions', '', class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'All groups', groups_path, class: 'nav-link' %></li>
+<div class="expenses-page-container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <%= link_to 'HouseHold Expenses', root_path, class: 'navbar-brand mb-0 h1 lobster' %>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav">
+          <li class="nav-item"><%= link_to 'All my expenses', expenses_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'All my external transactions', '', class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'All groups', groups_path, class: 'nav-link' %></li>
+        </div>
       </div>
     </div>
+  </nav>
+
+  <div class="d-flex justify-content-between p-3 bg-light shadow-sm">
+    <span class="text-secondary">Total Amount</span>
+    <span class="">$45.000</span>
   </div>
-</nav>
 
-<p id="notice"><%= notice %></p>
+  <div class="d-flex flex-column align-items-center h-auto p-3 text-secondary">
+    <div class="d-flex bg-white shadow">    
+      <%= image_tag "macdonalds.png", class: 'w-25 rounded p-2' %>
+      <div class="w-100">
+        <div class="d-flex justify-content-between p-2 border-bottom mx-2">
+          <span>expense name</span>
+          <span>$18.00</span>
+        </div>
+        <p class="my-0 mx-2 p-2"> 12 Apr 2014 </p>
+      </div>
+    </div>    
+  </div>
 
-<h1>Expenses</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>User</th>
-      <th>Group</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @expenses.each do |expense| %>
-      <tr>
-        <td><%= expense.name %></td>
-        <td><%= expense.amount %></td>
-        <td><%= expense.user_id %></td>
-        <td><%= expense.group_id %></td>
-        <td><%= link_to 'Show', expense %></td>
-        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Expense', new_expense_path %>
+  <div class="new-expense text-center w-100 p-4 position-absolute bottom-0">
+    <%= link_to 'New Expense', new_expense_path, class: 'text-white text-decoration-none py-3 px-5 border' %>
+  </div>
+</div>
