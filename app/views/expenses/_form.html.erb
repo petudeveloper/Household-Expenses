@@ -1,0 +1,30 @@
+<%= form_with(model: expense, url: expenses_path(mode)) do |form| %>
+  <% if expense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+
+      <ul>
+        <% expense.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :name, placeholder: 'name' %>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :amount, placeholder: 'amount' %>
+  </div>
+
+  <div class="field">
+    groups: <br>
+    <%= form.collection_check_boxes :group_ids, Group.all, :id, :name ,{ prompt: "name" } %>
+  </div>
+
+  <div class="actions mt-4">
+    <%= form.submit "CREATE EXPENSE", class: 'w-100 bg-primary border-0 text-white rounded px-5 py-2' %>
+  </div>
+<% end %>
