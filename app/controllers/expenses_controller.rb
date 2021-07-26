@@ -3,12 +3,20 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = current_user.expenses
+    @expenses = Expense.joins(:group_expenses)
+    @amount = @expenses.sum("amount")
+  end
+
+  def external
+    @expenses = Expense.left_outer_joins(:group_expenses)
+    @amount = @expenses.sum("amount")
   end
 
   # GET /expenses/1 or /expenses/1.json
   def show
   end
+
+  
 
   # GET /expenses/new
   def new
@@ -45,11 +53,7 @@ class ExpensesController < ApplicationController
       format.html { redirect_to expenses_url, notice: "Expense was successfully destroyed." }
       format.json { head :no_content }
     end
-  end
-
-  def external
-  end
-  
+  end  
 
   private
     # Use callbacks to share common setup or constraints between actions.

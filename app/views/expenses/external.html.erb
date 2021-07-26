@@ -7,6 +7,7 @@
 
   <div class="groups-container d-flex flex-column align-items-center h-auto pt-3 px-3 text-secondary">
     <% @expenses.each do |expense| %>
+      <% if expense.group_expenses.empty? %>
         <div class="d-flex bg-white shadow my-2">    
           <%= image_tag "macdonalds.png", class: 'w-25 rounded p-2' %>
           <div class="d-flex flex-column justify-content-center w-100">
@@ -16,7 +17,8 @@
             </div>
             <p class="my-0 mx-5 p-2"> <%= expense.created_at %> </p>
           </div>
-        </div> 
+        </div>
+      <% end %>    
     <% end %>    
   </div>
 
