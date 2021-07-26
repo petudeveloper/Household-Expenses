@@ -1,9 +1,10 @@
 class ExpensesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_expense, only: %i[ show edit update destroy ]
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.joins(:group_expenses)
+    @expenses = Expense.joins(:group_expenses).distinct
     @amount = @expenses.sum("amount")
   end
 
