@@ -1,5 +1,5 @@
 <div class="login-page-container d-flex flex-column align-items-center justify-content-center">
-    <h1>Editing Group</h1>
+    <h1 class="green mb-4">Editing Group</h1>
 
     <%= form_with(model: @group) do |form| %>
         <% if @group.errors.any? %>
@@ -19,7 +19,7 @@
         </div>
 
         <div class="field">
-            <%= form.number_field :icon, placeholder: 'icon' %>
+            <%= form.text_field :icon, placeholder: 'icon' %>
         </div>
 
         <div class="actions mt-4">
