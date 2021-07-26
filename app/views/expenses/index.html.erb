@@ -8,7 +8,11 @@
   <div class="groups-container d-flex flex-column align-items-center h-auto pt-3 px-3 text-secondary">
     <% @expenses.each do |expense| %>
         <div class="d-flex bg-white shadow my-2">    
-          <%= image_tag "macdonalds.png", class: 'w-25 rounded p-2' %>
+          <% unless expense.groups.first.icon == "" %>
+            <%= image_tag expense.groups.first.icon, size: 100, class: 'rounded p-2' %>
+          <% else %>
+            <%= image_tag "", size: 100, class: 'rounded p-2' %>
+          <% end %>
           <div class="d-flex flex-column justify-content-center w-100">
             <div class="d-flex justify-content-between p-2 border-bottom mx-5">
               <span><%= link_to expense.name, expense, class: 'text-decoration-none' %></span>
