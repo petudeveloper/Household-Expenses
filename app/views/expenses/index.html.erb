@@ -1,7 +1,7 @@
 <div class="expenses-page-container">
   <div class="d-flex justify-content-between p-3 bg-light shadow-sm">
     <span class="text-secondary">Total Amount</span>
-    <span class=""><%= number_to_currency(current_user.expenses.sum("amount")) %> </span>
+    <span class="bold"><%= number_to_currency(current_user.expenses.sum("amount")) %> </span>
   </div>
 
 
@@ -11,8 +11,8 @@
         <%= image_tag "macdonalds.png", class: 'w-25 rounded p-2' %>
         <div class="d-flex flex-column justify-content-center w-100">
           <div class="d-flex justify-content-between p-2 border-bottom mx-5">
-            <span><%= expense.name %></span>
-            <span><%= number_to_currency(expense.amount) %></span>
+            <span><%= link_to expense.name, expense, class: 'text-decoration-none' %></span>
+            <span class="bold"><%= number_to_currency(expense.amount) %></span>
           </div>
           <p class="my-0 mx-5 p-2"> <%= expense.created_at %> </p>
         </div>

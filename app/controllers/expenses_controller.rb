@@ -22,7 +22,7 @@ class ExpensesController < ApplicationController
   # POST /expenses or /expenses.json
   def create
     @expense = current_user.expenses.create(expense_params)
-    redirect_to expenses_path, notice: 'Your expense was successfully created.' if @expense.save
+    redirect_to @expense, notice: 'Your expense was successfully created.' if @expense.save
   end
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
@@ -46,6 +46,10 @@ class ExpensesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def external
+  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

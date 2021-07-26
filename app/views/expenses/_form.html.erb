@@ -22,7 +22,7 @@
   <div class="field">
     <%= form.label :group_ids, 'Groups:', class: 'pt-2' %>
     <% if current_user.groups.empty? %>
-      <p class="mt-2"> You don't have groups created </p>
+      <p class="mt-2"> You don't have groups created. </p>
     <% else %>
       <%= form.collection_check_boxes :group_ids, current_user.groups, :id, :name do |b| %>
         <% content_tag(:div, b.check_box(class: 'form-check-input bg-secondary') + b.label(class: 'form-check-label'), class: 'mb-3 form-check') %>
