@@ -1,5 +1,5 @@
 <div class="main-page-container d-flex flex-column align-items-center justify-content-center">
-    <%= link_to 'Sign out', destroy_user_session_path, class: 'text-white text-decoration-none position-absolute top-0 end-0 p-2' , method: :delete %>
+    <%= link_to 'Sign out', destroy_user_session_path, class: 'text-white text-decoration-none position-absolute top-0 end-0 p-3' , method: :delete %>
     <div class="d-flex flex-column align-items-center justify-content-center">
         <div class="d-flex justify-content-center">
             <%= image_tag "profileIcon.png", class: 'w-25 rounded-circle' %>
@@ -9,7 +9,7 @@
     <div class="pt-5">
         <ul class=" ps-0">
             <li class="py-3 border-bottom"><%= link_to 'All my expenses', expenses_path, class: 'text-decoration-none text-white ms-2' %></li>
-            <li class="py-3 border-bottom"><%= link_to 'All my external transactions', '', class: 'text-decoration-none text-white ms-2' %></li>
+            <li class="py-3 border-bottom"><%= link_to 'All my external transactions', expenses_expenses_external_path, class: 'text-decoration-none text-white ms-2' %></li>
             <li class="py-3 border-bottom"><%= link_to 'All groups', groups_path, class: 'text-decoration-none text-white ms-2' %>
         </ul>
     </div>
