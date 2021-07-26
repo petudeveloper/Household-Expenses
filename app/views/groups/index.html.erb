@@ -5,7 +5,7 @@
         <%= image_tag "macdonalds.png", class: 'w-25 rounded p-2' %>
         <div class="d-flex flex-column justify-content-center w-100">
           <div class="d-flex justify-content-between p-2 border-bottom mx-5">
-            <span><%= group.name %></span>
+            <span class="bold"><%= link_to group.name, group, class: 'text-decoration-none' %></span>
           </div>
           <p class="my-0 mx-5 p-2"> <%= group.created_at %> </p>
         </div>
