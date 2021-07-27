@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<div class="login-page-container d-flex flex-column align-items-center justify-content-center">
+  <h2 class="lobster mb-5 green"> <%= @expense.name.upcase %> </h2>
+
+  <p>
+    <strong>Amount:</strong>
+    <%= @expense.amount %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= @expense.user_id %>
+  </p>
+
+  <p>
+    <strong>Groups:</strong>
+    <% @expense.groups.each do |group| %>
+      <%= group.name %>
+    <% end %>
+  </p>
+
+  <div class="actions mt-4">
+    <%= link_to 'All my expenses', expenses_path, class: 'w-100 bg-primary border-0 text-white rounded px-5 py-2' %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="login-page-container d-flex flex-column align-items-center justify-content-center">
+  <h2 class="lobster mb-5">HouseHold Expenses</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Name' %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "LOG IN", class: 'w-100 bg-primary border-0 text-white rounded px-5 py-2' %>
+    </div>
+
+    <div class="px-5 py-2 rounded">
+      <%= link_to 'SIGN UP', new_user_registration_path, class: 'text-decoration-none ms-2' %>
+    </div>
+  <% end %>
+</div>
