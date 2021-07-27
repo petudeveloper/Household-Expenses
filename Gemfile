@@ -44,7 +44,7 @@ group :development do
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
-  #rspec for tests
+  # rspec for tests
   gem 'rspec-rails', '~> 5.0.0'
 end
 
