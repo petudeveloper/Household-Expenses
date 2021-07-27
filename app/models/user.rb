@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates :name, uniqueness: true
+  validates :name, presence: true, allow_blank: false
 
   has_many :groups, dependent: :destroy
   has_many :expenses, dependent: :destroy
