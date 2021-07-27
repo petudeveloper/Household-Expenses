@@ -11,7 +11,7 @@ RSpec.describe 'Profile Page', type: :system do
   end
 
   it 'denies access to unlogged' do
-    visit "#{root_path}"
+    visit root_path.to_s
     expect(page).to_not have_content('New Expense')
   end
 

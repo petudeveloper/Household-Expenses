@@ -4,7 +4,7 @@ RSpec.describe 'Expenses Pages', type: :system do
   before(:each) do
     author1 = User.create!(name: 'User001', email: 'example3@example.com', password: '123456')
     expense1 = author1.expenses.create!(name: 'Expense 1', amount: 4)
-    group1 = author1.groups.create!(name: 'Group 1', icon: "")
+    group1 = author1.groups.create!(name: 'Group 1', icon: '')
     expense1.groups << group1
     author1.expenses.create(name: 'Expense 2', amount: 8)
     author1.expenses.create(name: 'Expense 3', amount: 2)
