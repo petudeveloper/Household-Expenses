@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'rails', '~> 6.1.4'
 # Unncomment the next line if you want to use sqlite3 as the database for Active Record
 group :development, :test do
- gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :production do
