@@ -4,9 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
 # Unncomment the next line if you want to use sqlite3 as the database for Active Record
-#gem 'sqlite3', '~> 1.4'
-# Use postgresql as the database for Active Record
-gem 'pg'
+group :development, :test do
+ gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
