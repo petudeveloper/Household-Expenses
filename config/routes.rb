@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'users#show'
   resources :expenses, only: [:index, :show, :new, :create]
-  resources :groups
+  resources :groups, only: [:index, :show, :new, :edit, :create, :update]
   resources :user, only: [:show]
 
   devise_for :users, :controllers => {
