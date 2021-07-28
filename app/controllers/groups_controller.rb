@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = current_user.groups
+    @groups = current_user.groups.order(:name)
   end
 
   # GET /groups/1 or /groups/1.json
@@ -21,7 +21,11 @@ class GroupsController < ApplicationController
   # POST /groups or /groups.json
   def create
     @group = current_user.groups.new(group_params)
-    redirect_to @group, notice: 'Your group was successfully created.' if @group.save
+    if @group.save
+      redirect_to @group, notice: 'Your group was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   # PATCH/PUT /groups/1 or /groups/1.json
@@ -34,15 +38,6 @@ class GroupsController < ApplicationController
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /groups/1 or /groups/1.json
-  def destroy
-    @group.destroy
-    respond_to do |format|
-      format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

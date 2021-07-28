@@ -12,18 +12,21 @@
 
 ActiveRecord::Schema.define(version: 2021_07_23_151714) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "expenses", force: :cascade do |t|
     t.string "name"
     t.integer "amount"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_expenses_on_user_id"
   end
 
   create_table "group_expenses", force: :cascade do |t|
-    t.integer "group_id"
-    t.integer "expense_id"
+    t.bigint "group_id"
+    t.bigint "expense_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["expense_id"], name: "index_group_expenses_on_expense_id"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_07_23_151714) do
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "icon"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_groups_on_user_id"
