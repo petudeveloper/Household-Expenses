@@ -18,7 +18,7 @@
 
 ## Live Demo
 
-[Live Demo Link]('https://nameless-fortress-27608.herokuapp.com/')
+[Live Demo Link](https://nameless-fortress-27608.herokuapp.com/)
 
 ## Getting Started
 
@@ -32,7 +32,8 @@ For this project, the following environment should be previously installed on yo
 - Rails 6.1.4
 - PostgreSQL 12.7
 - Node 14.17.0
-- Yarn 1.22.10
+- Yarn 1.22.10 
+  - You can install Yarn by running the following in you terminal  ```npm install --global yarn``` you can have more information in the [Yarn official website](https://classic.yarnpkg.com/en/docs/install#windows-stable).
 
 ### Setup
 
