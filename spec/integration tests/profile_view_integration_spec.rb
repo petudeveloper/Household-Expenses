@@ -26,10 +26,10 @@ RSpec.describe 'Profile Page', type: :system do
   it 'allows the user to sign up' do
     visit root_path
     click_link 'SIGN UP'
-    fill_in 'Name', with: 'John Wick'
-    fill_in 'Email', with: 'example2@example.com'
-    fill_in 'Password', with: '123456'
-    fill_in 'Password confirmation', with: '123456'
+    fill_in 'name', with: 'John Wick'
+    fill_in 'email', with: 'example2@example.com'
+    fill_in 'password', with: '123456'
+    fill_in 'password confirmation', with: '123456'
     click_button 'SIGN UP'
     expect(page).to have_content('JOHN WICK')
   end
