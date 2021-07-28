@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.joins(:group_expenses).distinct
+    @expenses = Expense.where(user_id: current_user.id).order(created_at: :desc).includes(:groups)
     @amount = @expenses.sum('amount')
   end
 
