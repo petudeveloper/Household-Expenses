@@ -2,12 +2,12 @@
 
 # HouseHold Expenses (RoR Module Capstone Project)
 
-> This project was built for the [Microverse](https://www.microverse.org/) Ruby on Rails Module's Capstone Project. The project is based on a mobile app for grouping payments by goal with the user's family/friends. We should followed a given design of a website, but we must personalize the content, for this project in particular we will be working grouping the expenses a house.
+> This project was built for the [Microverse](https://www.microverse.org/) Ruby on Rails Module's Capstone Project. The project is based on a mobile app for grouping payments by a goal with the user's family/friends. We should follow a given design of a website, but we must personalize the content, for this project in particular we will be working on grouping the expenses of a house.
 
 ![screenshot](./docs/screenshot1.png)
 ![screenshot](./docs/screenshot2.png)
 
-**Important**: As a project's requirement, a proper authenticated login is not a requirement. This is a extra feature added.
+**Important**: As a project's requirement, a properly authenticated login is not a requirement. This is an extra feature.
 
 ## Built With
 
@@ -18,7 +18,7 @@
 
 ## Live Demo
 
-[Live Demo Link]('')
+[Live Demo Link]('https://nameless-fortress-27608.herokuapp.com/')
 
 ## Getting Started
 
@@ -63,18 +63,18 @@ rails db:create
 rails db:migrate
 ```
 
-- To start your local host, run
+- To start your localhost, run
 
 ```sh
 rails server
 ```
 
-You can stop your local server pressing `<ctrl> + c` on your keyboard.
+You can stop your local server by pressing `<ctrl> + c` on your keyboard.
 
 ### Tests
 
 - Your computer should have Google Chrome installed.
-- On the root of the project, run
+- At the root of the project, run
 
 ```sh
 rspec
