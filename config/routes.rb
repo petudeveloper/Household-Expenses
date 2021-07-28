@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'users#show'
-  resources :expenses
+  resources :expenses, only: [:index, :show, :new, :create]
   resources :groups
   resources :user, only: [:show]
 
