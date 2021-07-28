@@ -24,7 +24,11 @@ class ExpensesController < ApplicationController
   # POST /expenses or /expenses.json
   def create
     @expense = current_user.expenses.create(expense_params)
-    redirect_to @expense, notice: 'Your expense was successfully created.' if @expense.save
+    if @expense.save
+      redirect_to @expense, notice: 'Your expense was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private

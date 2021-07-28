@@ -21,7 +21,11 @@ class GroupsController < ApplicationController
   # POST /groups or /groups.json
   def create
     @group = current_user.groups.new(group_params)
-    redirect_to @group, notice: 'Your group was successfully created.' if @group.save
+    if @group.save
+      redirect_to @group, notice: 'Your group was successfully created.' 
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   # PATCH/PUT /groups/1 or /groups/1.json
