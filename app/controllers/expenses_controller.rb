@@ -9,7 +9,7 @@ class ExpensesController < ApplicationController
   end
 
   def external
-    @expenses = Expense.left_outer_joins(:group_expenses)
+    @expenses = Expense.order(created_at: :desc).left_outer_joins(:group_expenses)
     @amount = @expenses.sum('amount')
   end
 
