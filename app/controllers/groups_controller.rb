@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
   def create
     @group = current_user.groups.new(group_params)
     if @group.save
-      redirect_to @group, notice: 'Your group was successfully created.' 
+      redirect_to @group, notice: 'Your group was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
