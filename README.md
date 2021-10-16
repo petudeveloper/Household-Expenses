@@ -18,7 +18,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://gentle-oasis-88251.herokuapp.com/)
+[Live Demo Link](https://house-expenses-petudeveloper.herokuapp.com/)
 
 ## Getting Started
 
