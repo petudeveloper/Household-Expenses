@@ -2,7 +2,7 @@
 
 # HouseHold Expenses (RoR Module Capstone Project)
 
-> This project was built for the [Microverse](https://www.microverse.org/) Ruby on Rails Module's Capstone Project. The project is based on a mobile app for grouping payments by a goal with the user's family/friends. We should follow a given design of a website, but we must personalize the content, for this project in particular we will be working on grouping the expenses of a house.
+> The project is based on a mobile app for grouping payments by a goal with the user's family/friends.
 
 ![screenshot](./docs/screenshot1.png)
 ![screenshot](./docs/screenshot2.png)
