@@ -7,8 +7,6 @@
 ![screenshot](./docs/screenshot1.png)
 ![screenshot](./docs/screenshot2.png)
 
-**Important**: As a project's requirement, a properly authenticated login is not a requirement. This is an extra feature.
-
 ## Built With
 
 - Ruby 3.0.1
